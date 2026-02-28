@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 248 20% 8%;
+    --foreground: 270 100% 98%;
+
+    --card: 248 25% 12%;
+    --card-foreground: 270 100% 98%;
+
+    --popover: 248 25% 12%;
+    --popover-foreground: 270 100% 98%;
+
+    --primary: 280 100% 65%;
+    --primary-foreground: 270 100% 98%;
+
+    --secondary: 260 50% 20%;
+    --secondary-foreground: 270 100% 95%;
+
+    --muted: 260 30% 18%;
+    --muted-foreground: 270 30% 70%;
+
+    --accent: 290 100% 70%;
+    --accent-foreground: 270 100% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 270 30% 25%;
+    --input: 270 30% 20%;
+    --ring: 280 100% 65%;
+
+    --radius: 0.75rem;
+
+    /* Custom LUMINA colors */
+    --lumina-purple: 280 100% 65%;
+    --lumina-magenta: 300 100% 60%;
+    --lumina-violet: 260 80% 55%;
+    --lumina-deep: 248 40% 10%;
+    --lumina-glow: 290 100% 75%;
+
+    /* Gradients */
+    --gradient-lumina: linear-gradient(135deg, hsl(280 100% 65%), hsl(300 100% 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(248 40% 10%) 0%, hsl(248 30% 6%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(260 50% 15% / 0.6), hsl(248 40% 10% / 0.8));
+
+    /* Shadows */
+    --shadow-glow: 0 0 60px hsl(280 100% 65% / 0.3);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
+
+    --sidebar-background: 248 25% 10%;
+    --sidebar-foreground: 270 100% 95%;
+    --sidebar-primary: 280 100% 65%;
+    --sidebar-primary-foreground: 270 100% 98%;
+    --sidebar-accent: 260 50% 20%;
+    --sidebar-accent-foreground: 270 100% 95%;
+    --sidebar-border: 270 30% 25%;
+    --sidebar-ring: 280 100% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-gradient-lumina {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-lumina);
+  }
+
+  .glow-lumina {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glass-card {
+    @apply backdrop-blur-xl border border-border/50;
+    background: var(--gradient-card);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
