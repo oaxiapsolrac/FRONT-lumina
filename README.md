@@ -44,7 +44,7 @@ Configure as variáveis de ambiente:
 Crie um arquivo .env na raiz do projeto e adicione sua chave da API:
 
 Snippet de código
-VITE_GEMINI_API_KEY=SUA_CHAVE_AQUI
+GROQ_GEMINI_API_KEY=SUA_CHAVE_AQUI
 Inicie o servidor de desenvolvimento:
 
 Bash
